@@ -3,11 +3,27 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  return arr.sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    result = 0
+
+  elsif(arr.all?(Integer))
+      if arr.one?(Integer)
+          result = arr.at(0)
+      else    
+          arr = arr.sort_by{|a| a}.reverse!
+          result = (arr.at(0) + arr.at(1))
+      end
+
+  else
+      puts "Array contains non-numerical values"
+      result = nil    
+  end
+
+  return result
 end
 
 def sum_to_n? arr, n
