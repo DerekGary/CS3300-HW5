@@ -27,7 +27,20 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  result = false
+  if arr.empty?
+  else
+    a_hash = {}
+    arr.each_with_index do |num,i|
+      difference = n - num
+      if a_hash[difference]
+        result = true
+      else
+        a_hash[num] = i
+      end
+    end
+  end
+  return result
 end
 
 # Part 2
